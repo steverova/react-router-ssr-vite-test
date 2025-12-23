@@ -10,6 +10,7 @@ import { createStaticHandler } from "react-router";
 import type { ViteDevServer } from "vite";
 import routes from "./src/router/routes.ts";
 import apiRouter from "./src/server/api/index.ts";
+import { de } from "zod/locales";
 
 // Constants
 const isProduction: boolean = process.env.NODE_ENV === "production";
@@ -150,7 +151,6 @@ app.use(
 	},
 );
 
-// Start http server
-const listener = app.listen(port, (): void => {
-	console.log(`Server started at http://localhost:${port}`);
-});
+export default app;
+
+// Start server
